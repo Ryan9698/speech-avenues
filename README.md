@@ -1,0 +1,1 @@
+<a href="https://iconscout.com/icons/phone" class="text-underline font-size-sm" target="_blank">Phone</a> by <a href="https://iconscout.com/contributors/theiconz" class="text-underline font-size-sm">The Icon Z</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
