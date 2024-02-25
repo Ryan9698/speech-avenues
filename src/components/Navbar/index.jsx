@@ -30,10 +30,10 @@ const Navbar = () => {
   // Styles
   // Ensuring consistent layout with padding, and focusing on color and text weight for active styling
   const navBarStyle =
-    "bg-gradient-to-r from-black to-gray-800 text-white shadow-md";
+    "relative bg-gradient-to-r from-black to-gray-800 text-white shadow-md";
   const activeStyle = "font-semibold text-blue-400 px-4 py-3"; // Active style emphasizes color change
   const inactiveStyle =
-    "text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-3 text-base font-medium transition duration-300"; // Inactive style maintains layout consistency
+    "text-gray-300 hover:bg-gray-700 hover:text-white rounded px-4 py-3 text-base font-medium transition duration-300"; // Inactive style maintains layout consistency
   const dropdownStyle =
     "absolute w-48 bg-gradient-to-r from-black to-gray-800 rounded divide-y divide-gray-500 shadow-lg py-1 z-50";
 
@@ -52,8 +52,15 @@ const Navbar = () => {
           <div className="flex items-center">
             {/* Logo and Home Link */}
             <div className="menuLogo">
-              <Link to="/" className="flex-shrink-0 flex items-center mr-6">
-                <img src="/images/logo.jpg" alt="Logo" className="h-12" />
+              <Link
+                to="/"
+                className="absolute top-10 left-16 transform -translate-x-1/2 -translate-y-1/2 z-20"
+              >
+                <img
+                  src="/images/logo.jpg"
+                  alt="Logo"
+                  className="h-20 w-20 rounded-full border-4 border-black-500"
+                />
               </Link>
             </div>
             <div className="flex-grow">

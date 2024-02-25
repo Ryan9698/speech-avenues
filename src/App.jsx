@@ -5,9 +5,9 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div id="mainContainer">
+    <div id="mainContainer" className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="mx-auto">
+      <main className="mx-auto flex-1">
         <Outlet />
       </main>
       <Footer />

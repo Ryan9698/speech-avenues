@@ -14,6 +14,9 @@ import Therapy from "./pages/Therapy";
 import SpeechTherapy from "./pages/Therapy/SpeechTherapy";
 import OccupationalTherapy from "./pages/Therapy/OccupationalTherapy";
 import PhysicalTherapy from "./pages/Therapy/PhysicalTherapy";
+import Therapists from "./pages/Therapists";
+import SLP from "./pages/Therapists/SLP";
+import OT from "./pages/Therapists/OT";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +59,20 @@ const router = createBrowserRouter([
           {
             path: "physicaltherapy",
             element: <PhysicalTherapy />,
+          },
+        ],
+      },
+      {
+        path: "/therapists",
+        element: <Therapists />,
+        children: [
+          {
+            path: "slp",
+            element: <SLP />,
+          },
+          {
+            path: "ot",
+            element: <OT />,
           },
         ],
       },
