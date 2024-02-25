@@ -35,29 +35,44 @@ export default function SpeechTherapy() {
         {/* FAQ Sidebar */}
         <div className="w-full md:w-1/3 lg:w-1/4 p-4">
           <details className="bg-white border border-gray-200 rounded-lg p-4 mb-4">
-            <summary className="text-lg font-semibold">What is Speech?</summary>
+            <summary className="text-lg font-semibold">What Is Speech?</summary>
             <div className="mt-2 text-base text-gray-600">
               <p>
-                Speech is produced with the goal of the listener’s perception.
-                Accurate and precise articulation requires an alignment of exact
-                placement, timing, direction, and force of the articulators in
-                conjunction with air steam adjustments, initiation or stopping
-                of phonation (the process of the making sound in the vocal
-                folds) and velopharyngeal action. Speech is comprised of
-                integration of the body (i.e. neuromuscular, musculoskeletal,
-                central, and peripheral systems) and brain (i.e.
-                Neurocognitive). This integration begins at the conception of
-                thought, feeling or emotion that is intended to communicate.
-                This is message must follow the language rules it is spoken in
-                being conveyed into verbal symbols. The message is sent to the
-                neuromuscular system for execution is sequenced by the
-                sensorimotor system which activate the speech muscles for
-                appropriate timing, duration, and intensity. Finally, the
-                message is sent to the central and peripheral systems for
-                regulation and execution by innervating the respiratory,
-                phonology, resonatory and articulatory systems in a way turning
-                that the combination of the muscles form an acoustic signal that
-                is perceived by another person.
+                Speech is the expressive production of sounds and involves a
+                highly coordinated motor process of breathing, voice production,
+                and articulation of the mouth, lips, and tongue. It's a vital
+                part of human communication and includes several key components:
+              </p>
+              <ul className="list-disc pl-5 space-y-2">
+                <li className="mt-2">
+                  <strong>Articulation:</strong> This refers to the way we
+                  produce individual sounds and words. Precise movement of the
+                  mouth, lips, and tongue is necessary to form sounds
+                  accurately. For instance, to say the word "rabbit," we must be
+                  able to produce the "r" sound clearly instead of
+                  misarticulating it as "wabbit."
+                </li>
+                <li>
+                  <strong>Voice:</strong> This involves using our vocal folds
+                  and breathing to produce sounds. The quality of our voice can
+                  vary in loudness and pitch. Strain or damage to the vocal
+                  folds can occur from excessive talking, yelling, or persistent
+                  coughing, leading to vocal issues.
+                </li>
+                <li>
+                  <strong>Fluency:</strong> Fluency is the flow and rhythm of
+                  speech. It's how smoothly sounds, syllables, words, and
+                  phrases are joined together when we talk. Disfluencies occur
+                  when this flow is interrupted by repeated sounds, syllables,
+                  or by pausing mid-speech. Stuttering is one type of fluency
+                  disorder characterized by frequent disfluencies.
+                </li>
+              </ul>
+              <p className="mt-4">
+                Understanding and addressing issues in these areas is crucial
+                for effective communication. Speech-language pathologists
+                specialize in diagnosing and treating various speech disorders
+                to help individuals communicate clearly and confidently.
               </p>
             </div>
           </details>
@@ -66,7 +81,7 @@ export default function SpeechTherapy() {
             <summary className="text-lg font-semibold">
               What is a Speech Disorder?
             </summary>
-            <div className="mt-2 text-base text-gray-600">
+            <div className="mt-2 text-base text-gray-600 space-y-3">
               <p>
                 A speech disorder refers to difficulties in producing sounds
                 correctly, speaking fluently, or using one's voice effectively.

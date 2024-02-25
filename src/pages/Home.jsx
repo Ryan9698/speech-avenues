@@ -32,34 +32,16 @@ export default function Home() {
           nurturing growth, and empowering them to overcome challenges while
           enhancing their unique special abilities.
         </p>
-        {/* <p>
-          Speech Avenues Therapy Co is a
-           company that provides speech and
-          language services in Brevard County, Florida. We provide exceptional,
-          therapy services to children and adults diagnosed with autism spectrum
-          (verbal, minimally verbal and nonverbal), we also treat cerebral
-          palsy, traumatic brain injury, apraxia, Down’s Syndrome, articulation,
-          reading, phonological and/or articulation, stuttering and auditory
-          processing disorders. We treat adults diagnosed with Apraxia, Aphasia,
-          Memory disorders with diminished cognition. Augmentative and
-          Alternative Communication services, (AAC), AAC device programming and
-          implementation.
-        </p>
-        <p>Click below to watch a video about us!</p>
-        <a
-          href="https://youtu.be/dCoWv8yV8qk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 text-decoration-none hover:underline"
-        >
-          Complete Healing with Speech Pathologist Gail Walter and Jane Kran
-        </a>
-        <p>To book an appointment, please contact us at:</p> */}
+        <p>For inquiries or to book an appointment, please call</p>
         <div className="flex items-center">
           <PhoneIcon className="inline mr-2" />
-          <span className="text-lg font-medium" type="tel">
+
+          <a
+            href="tel:+13213382419"
+            className="text-lg font-medium no-underline"
+          >
             321-338-2419
-          </span>
+          </a>
         </div>
       </div>
     </div>

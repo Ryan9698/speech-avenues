@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   const address = "107 Longwood Ave, Rockledge, FL 32955";
   const encodedAddress = encodeURIComponent(address);
+  const facebookUrl = "https://www.facebook.com/speechavenuestherapyco/";
 
   return (
     <footer className="bg-gradient-to-r from-black to-gray-800 text-white shadow-md">
@@ -20,11 +21,13 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex items-center space-x-4 flex-grow justify-center">
-            <img
-              src="/PNG Icons/256/Facebook.png"
-              alt="Facebook"
-              className="h-9 w-9 hover:scale-110 transition-transform duration-200"
-            />
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+              <img
+                src="/PNG Icons/256/Facebook.png"
+                alt="Facebook"
+                className="h-9 w-9 hover:scale-110 transition-transform duration-200"
+              />
+            </a>
             <img
               src="/PNG Icons/256/Instagram.png"
               alt="Instagram"

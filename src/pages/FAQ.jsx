@@ -6,7 +6,7 @@ export default function FAQ() {
   return (
     <div>
       <h1 className="text-2xl font-semibold mb-4 text-center mt-10">FAQ</h1>
-      <div class="max-w-lg mx-auto p-8">
+      {/* <div class="max-w-lg mx-auto p-8">
         <details
           class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg p-6 rounded-lg"
           open
@@ -20,7 +20,7 @@ export default function FAQ() {
             </p>
           </div>
         </details>
-      </div>
+      </div> */}
       {/* This is the component for the packet downloads.*/}
       {/* <PacketList /> */}
     </div>
