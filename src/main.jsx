@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ErrorPage from "./pages/Error";
-import FAQ from "./pages/FAQ";
+import Forms from "./pages/Forms";
 import Services from "./pages/Services";
 import Therapy from "./pages/Therapy";
 import SpeechTherapy from "./pages/Therapy/SpeechTherapy";
@@ -37,8 +37,8 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/faq",
-        element: <FAQ />,
+        path: "/forms",
+        element: <Forms />,
       },
       {
         path: "/services",

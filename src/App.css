@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Rob Graves";
+  src: url("/fonts/Robgraves-lKYV.ttf");
+}
+
 .cursiveFont {
   font-family: "Dancing Script", cursive;
+}
+
+.schoolFont {
+  font-family: "Rob Graves", cursive;
 }

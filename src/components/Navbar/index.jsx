@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  //useRef ensures timeout ID persists across renders without triggering addition renders itself
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Added state for mobile menu
   const closeTimeoutId = useRef(null);
 
   const handleMouseEnter = () => {
@@ -27,152 +27,161 @@ const Navbar = () => {
     };
   }, []);
 
-  // Styles
-  // Ensuring consistent layout with padding, and focusing on color and text weight for active styling
+  // Mobile Menu Functions
+
+  const toggleMobileMenu = () => {
+    // Function to toggle the mobile menu
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Styling variables to simplify some of the code
+
   const navBarStyle =
-    "relative bg-gradient-to-r from-black to-gray-800 text-white shadow-md";
-  const activeStyle = "font-semibold text-blue-400 px-4 py-3"; // Active style emphasizes color change
+    "bg-gradient-to-r from-black to-gray-800 text-white shadow-md";
+  const linkStyle = "font-semibold text-blue-400 px-4 py-3";
   const inactiveStyle =
-    "text-gray-300 hover:bg-gray-700 hover:text-white rounded px-4 py-3 text-base font-medium transition duration-300"; // Inactive style maintains layout consistency
-  const dropdownStyle =
-    "absolute w-48 bg-gradient-to-r from-black to-gray-800 rounded divide-y divide-gray-500 shadow-lg py-1 z-50";
+    "text-gray-300 hover:bg-gray-700 hover:text-white rounded px-4 py-3 text-base font-medium transition duration-300";
 
-  const dropdownItemStyle =
-    "px-4 py-3 text-base font-medium block w-full text-left";
-
-  const activeDropdownItemStyle = `${dropdownItemStyle} text-blue-400 font-semibold`;
-  const inactiveDropdownItemStyle = `${dropdownItemStyle} text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300`;
+  // Rendered content
 
   return (
-    <nav className={navBarStyle}>
-      {/* Sets a 500ms delay in closing dropdown menu to enhance user experience. Function declared above */}
+    <nav>
+      {/* Mobile Navigation */}
+      <div className="md:hidden">
+        <button onClick={toggleMobileMenu}>
+          {/* Icon for mobile menu toggle */}
+        </button>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden">{/* Mobile menu content */}</div>
+      )}
+
+      {/* Desktop Navigation */}
+      <div className={`${navBarStyle} fixed w-full z-30 top-0 left-0`}>
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
           <div className="flex items-center">
-            {/* Logo and Home Link */}
-            <div className="menuLogo">
-              <Link
-                to="/"
-                className="absolute top-10 left-16 transform -translate-x-1/2 -translate-y-1/2 z-20"
+            <Link to="/" className="flex-shrink-0">
+              <img
+                src="/images/bannerlogo.png"
+                alt="Logo"
+                className="h-40 w-40 relative top-6 ml-4 lg:right-40"
+              />
+            </Link>
+          </div>
+          <NavLink
+            to="/school"
+            className={({ isActive }) =>
+              `{isActive ? linkStyle : inactiveStyle} schoolFont text-xl inline-flex items-center`
+            }
+          >
+            School
+            <img src="/images/pencil1.png" alt="Logo" className="h-10 w-10" />
+          </NavLink>
+          {/* Other Navigation Links */}
+          <div className="hidden md:flex items-center space-x-1">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              About
+            </NavLink>
+            <div className="relative">
+              <button
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${inactiveStyle} inline-flex items-center`}
               >
-                <img
-                  src="/images/logo.jpg"
-                  alt="Logo"
-                  className="h-20 w-20 rounded-full border-4 border-black-500"
-                />
-              </Link>
-            </div>
-            <div className="flex-grow">
-              <div className="flex justify-center space-x-8">
-                {/* Navigation Links */}
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? activeStyle : inactiveStyle
-                  }
+                Services
+                <svg
+                  className="ml-2 -mr-1 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
                 >
-                  Home
-                </NavLink>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive ? activeStyle : inactiveStyle
-                  }
-                >
-                  About
-                </NavLink>
-                {/* Dropdown Trigger */}
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              {isDropdownOpen && (
                 <div
-                  className="relative"
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
                 >
-                  <button
-                    className={`${inactiveStyle} inline-flex items-center`}
-                  >
-                    Services
-                    <svg
-                      className="ml-2 -mr-1 h-5 w-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                  {/* Dropdown Menu */}
                   <div
-                    className="relative"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
+                    className="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="options-menu"
                   >
-                    {isDropdownOpen && (
-                      <div
-                        className={dropdownStyle}
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                      >
-                        <NavLink
-                          to="/therapy/speechtherapy"
-                          className={({ isActive }) =>
-                            isActive
-                              ? activeDropdownItemStyle
-                              : inactiveDropdownItemStyle
-                          }
-                        >
-                          Speech Therapy
-                        </NavLink>
-                        <NavLink
-                          to="/therapy/occupationaltherapy"
-                          className={({ isActive }) =>
-                            isActive
-                              ? activeDropdownItemStyle
-                              : inactiveDropdownItemStyle
-                          }
-                        >
-                          Occupational Therapy
-                        </NavLink>
-                        <NavLink
-                          to="/therapy/physicaltherapy"
-                          className={({ isActive }) =>
-                            isActive
-                              ? activeDropdownItemStyle
-                              : inactiveDropdownItemStyle
-                          }
-                        >
-                          Physical Therapy
-                        </NavLink>
-                      </div>
-                    )}
+                    <NavLink
+                      to="/therapy/speechtherapy"
+                      className={({ isActive }) =>
+                        isActive ? linkStyle : inactiveStyle
+                      }
+                      role="menuitem"
+                    >
+                      Speech Therapy
+                    </NavLink>
+                    <NavLink
+                      to="/therapy/occupationaltherapy"
+                      className={({ isActive }) =>
+                        isActive ? linkStyle : inactiveStyle
+                      }
+                      role="menuitem"
+                    >
+                      Occupational Therapy
+                    </NavLink>
+                    <NavLink
+                      to="/therapy/physicaltherapy"
+                      className={({ isActive }) =>
+                        isActive ? linkStyle : inactiveStyle
+                      }
+                      role="menuitem"
+                    >
+                      Physical Therapy
+                    </NavLink>
                   </div>
                 </div>
-                <NavLink
-                  to="/faq"
-                  className={({ isActive }) =>
-                    isActive ? activeStyle : inactiveStyle
-                  }
-                >
-                  FAQ
-                </NavLink>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? activeStyle : inactiveStyle
-                  }
-                >
-                  Contact
-                </NavLink>
-              </div>
+              )}
             </div>
+            <NavLink
+              to="/forms"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              Forms
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              Contact
+            </NavLink>
           </div>
         </div>
       </div>
+      {/* </div> */}
+      <div className="h-24 md:h-24"></div>
     </nav>
   );
 };
