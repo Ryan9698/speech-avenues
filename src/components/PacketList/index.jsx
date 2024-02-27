@@ -9,15 +9,29 @@ export default function PacketList() {
   const dropdownContentStyle =
     "bg-white shadow-lg rounded-md p-3 mt-2 max-w-md mx-auto";
 
+  const dropdownItemStyle =
+    "border p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300";
+
+  const adultDownloadButtonStyle =
+    "bg-black text-white py-2 px-4 rounded hover:text-white hover:bg-gradient-to-r from-indigo-500 to-purple-600 transition duration-300";
+
+  const childDownloadButtonStyle =
+    "bg-black text-white py-2 px-4 rounded hover:text-white hover:bg-gradient-to-r from-green-500 to-blue-500 transition duration-300";
+
+  const buttonStyle =
+    "font-semibold py-2 px-10 inline-block text-white rounded transition duration-300 transform hover:-translate-y-1 hover:shadow-lg w-60 h-20";
+
   return (
     <div className="packet-list my-8">
-      <h2 className="text-2xl font-semibold mb-4">Downloadable Packets</h2>
+      <h2 className="text-2xl font-semibold cursiveFont mb-8">
+        Downloadable Packets:
+      </h2>
 
       {/* Adult Packets Dropdown */}
       <div className="text-center">
         <button
           onClick={() => setShowAdults(!showAdults)}
-          className="font-semibold py-2 mb-2 inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 rounded hover:opacity-90 transition duration-300"
+          className={`${buttonStyle} bg-gradient-to-r from-indigo-500 to-purple-600 hover:opacity-90`}
         >
           Adult Intake Forms
         </button>
@@ -33,13 +47,13 @@ export default function PacketList() {
                       packet.category.includes("Adults"))
                 )
                 .map((packet) => (
-                  <li key={packet.id} className="border p-4 rounded-lg">
+                  <li key={packet.id} className={dropdownItemStyle}>
                     <h3 className="font-bold text-lg">{packet.title}</h3>
-                    <p className="mb-2">{packet.description}</p>
+                    <p className="mb-2 text-gray-700">{packet.description}</p>
                     <a
                       href={packet.url}
                       download
-                      className="bg-black text-white py-2 px-4 rounded hover:bg-red-700 transition duration-300"
+                      className={adultDownloadButtonStyle}
                     >
                       Download
                     </a>
@@ -54,7 +68,7 @@ export default function PacketList() {
       <div className="text-center mt-6">
         <button
           onClick={() => setShowChildren(!showChildren)}
-          className="font-semibold py-2 mb-2 inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-4 rounded hover:opacity-90 transition duration-300"
+          className={`${buttonStyle} bg-gradient-to-r from-green-500 to-blue-500 hover:opacity-90`}
         >
           Children Intake Forms
         </button>
@@ -70,13 +84,13 @@ export default function PacketList() {
                       packet.category.includes("Children"))
                 )
                 .map((packet) => (
-                  <li key={packet.id} className="border p-4 rounded-lg">
+                  <li key={packet.id} className={dropdownItemStyle}>
                     <h3 className="font-bold text-lg">{packet.title}</h3>
-                    <p className="mb-2">{packet.description}</p>
+                    <p className="mb-2 text-gray-700">{packet.description}</p>
                     <a
                       href={packet.url}
                       download
-                      className="bg-black text-white py-2 px-4 rounded hover:bg-blue-700 hover:text-white transition duration-300"
+                      className={childDownloadButtonStyle}
                     >
                       Download
                     </a>

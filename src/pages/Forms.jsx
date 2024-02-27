@@ -5,13 +5,14 @@ import PacketList from "../components/PacketList";
 
 export default function Forms() {
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <div>
-        <h1 className="cursiveFont">Forms</h1>
+        <h1 className="text-4xl font-bold mb-6 cursiveFont">Forms</h1>
       </div>
-      <p>
-        Below you will find downloads for necessary forms. Please print and fill
-        out the information and submit it to us when youn arrive.
+      <p className="mt-4">
+        Below you will find downloadable intake forms for our services. We ask
+        that you please print out these forms and fill them out before you
+        arrive.
       </p>
       <PacketList />
     </div>

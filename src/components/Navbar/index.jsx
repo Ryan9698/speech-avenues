@@ -34,6 +34,12 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Close dropdown menu once a link is clicked:
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   // Styling variables to simplify some of the code
 
   const navBarStyle =
@@ -73,7 +79,9 @@ const Navbar = () => {
           <NavLink
             to="/school"
             className={({ isActive }) =>
-              `{isActive ? linkStyle : inactiveStyle} schoolFont text-xl inline-flex items-center`
+              `${
+                isActive ? linkStyle : inactiveStyle
+              } schoolFont text-xl inline-flex items-center`
             }
           >
             School
@@ -118,14 +126,15 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
+              {/* Services Dropdown Menu */}
               {isDropdownOpen && (
                 <div
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                  className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-md bg-gray-800 ring-1 ring-black ring-opacity-5"
                 >
                   <div
-                    className="py-1"
+                    className="py-1 divide-y divide-gray-700"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="options-menu"
@@ -133,27 +142,36 @@ const Navbar = () => {
                     <NavLink
                       to="/therapy/speechtherapy"
                       className={({ isActive }) =>
-                        isActive ? linkStyle : inactiveStyle
+                        `block px-4 py-2 text-white hover:bg-gray-700 ${
+                          isActive ? "bg-gray-700" : ""
+                        }`
                       }
                       role="menuitem"
+                      onClick={closeDropdown}
                     >
                       Speech Therapy
                     </NavLink>
                     <NavLink
                       to="/therapy/occupationaltherapy"
                       className={({ isActive }) =>
-                        isActive ? linkStyle : inactiveStyle
+                        `block px-4 py-2 text-white hover:bg-gray-700 ${
+                          isActive ? "bg-gray-700" : ""
+                        }`
                       }
                       role="menuitem"
+                      onClick={closeDropdown}
                     >
                       Occupational Therapy
                     </NavLink>
                     <NavLink
                       to="/therapy/physicaltherapy"
                       className={({ isActive }) =>
-                        isActive ? linkStyle : inactiveStyle
+                        `block px-4 py-2 text-white hover:bg-gray-700 ${
+                          isActive ? "bg-gray-700" : ""
+                        }`
                       }
                       role="menuitem"
+                      onClick={closeDropdown}
                     >
                       Physical Therapy
                     </NavLink>

@@ -9,14 +9,14 @@ export const packets = [
   {
     id: 2,
     title: "Child Speech Intake Form",
-    description: "Child Speech Intake Form",
+    description: "Child Intake Form for Speech Therapy",
     url: "/downloads/Child-Speech-Intake.docx",
     category: "Children",
   },
   {
     id: 3,
     title: "OT Child Intake Form",
-    description: "OT Child Intake Form",
+    description: "Child Intake Form for Occupational Therapy",
     url: "/downloads/OT-Child-Intake.docx",
     category: "Children",
   },
