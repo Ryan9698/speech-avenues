@@ -70,7 +70,7 @@ export default function PacketList() {
           onClick={() => setShowChildren(!showChildren)}
           className={`${buttonStyle} bg-gradient-to-r from-green-500 to-blue-500 hover:opacity-90`}
         >
-          Children Intake Forms
+          Child Intake Forms
         </button>
 
         {showChildren && (
