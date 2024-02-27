@@ -7,7 +7,7 @@ export default function Home() {
       <img
         src="/images/logo.jpg"
         alt="Logo"
-        className="w-full md:w-1/2 mb-6 md:mb-0 md:mr-6"
+        className="homeLogo w-full md:w-1/2 mb-6 md:mb-0 md:mr-6"
       />
       <div className="prose prose-lg max-w-none md:w-1/2">
         <h1
