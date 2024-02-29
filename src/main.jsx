@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import App from "./App";
+import { register } from "swiper/element/bundle";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,6 +18,8 @@ import PhysicalTherapy from "./pages/Therapy/PhysicalTherapy";
 import Therapists from "./pages/Therapists";
 import SLP from "./pages/Therapists/SLP";
 import OT from "./pages/Therapists/OT";
+
+register(); // register Swiper components
 
 const router = createBrowserRouter([
   {

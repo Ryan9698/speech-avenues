@@ -4,6 +4,11 @@ module.exports = {
   // tailwind.config.js
   theme: {
     extend: {
+      screens: {
+        "2xl": "1536px",
+        // Add a custom breakpoint for 4k screens
+        "4k": "2560px", // This breakpoint will apply to screens larger than 2560px
+      },
       fontFamily: {
         dancing: ['"Dancing Script"', "cursive"],
       },

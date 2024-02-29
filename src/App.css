@@ -14,6 +14,15 @@
 .schoolFont {
   font-family: "Rob Graves", cursive;
 }
+/* Carousel */
+
+.float-right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
+}
 
 /* Logo Animation */
 .homeLogo {
