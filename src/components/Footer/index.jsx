@@ -25,23 +25,23 @@ const Footer = () => {
               <img
                 src="/PNG Icons/256/Facebook.png"
                 alt="Facebook"
-                className="h-9 w-9 hover:scale-110 transition-transform duration-200"
+                className="h-9 w-9 hover:scale-150 transition-transform duration-200"
               />
             </a>
             <img
               src="/PNG Icons/256/Instagram.png"
               alt="Instagram"
-              className="h-9 w-9 hover:scale-110 transition-transform duration-200"
+              className="h-9 w-9 hover:scale-150 transition-transform duration-200"
             />
             <img
               src="/PNG Icons/256/Linkedin.png"
               alt="LinkedIn"
-              className="h-9 w-9 hover:scale-110 transition-transform duration-200"
+              className="h-9 w-9 hover:scale-150 transition-transform duration-200"
             />
             <img
               src="/PNG Icons/256/TikTok.png"
               alt="TikTok"
-              className="h-9 w-9 hover:scale-110 transition-transform duration-200"
+              className="h-9 w-9 hover:scale-150 transition-transform duration-200"
             />
           </div>
 

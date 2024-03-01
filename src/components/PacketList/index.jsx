@@ -13,7 +13,7 @@ export default function PacketList() {
     "border p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300";
 
   const adultDownloadButtonStyle =
-    "bg-black text-white py-2 px-4 rounded hover:text-white hover:bg-gradient-to-r from-indigo-500 to-purple-600 transition duration-300";
+    "bg-black shadow-xl text-white py-2 px-4 rounded hover:text-white hover:bg-gradient-to-r from-indigo-500 to-purple-600 transition duration-300";
 
   const childDownloadButtonStyle =
     "bg-black text-white py-2 px-4 rounded hover:text-white hover:bg-gradient-to-r from-green-500 to-blue-500 transition duration-300";
@@ -37,7 +37,7 @@ export default function PacketList() {
         </button>
 
         {showAdults && (
-          <div className={dropdownContentStyle}>
+          <div className={`bg-purple-300 ${dropdownContentStyle}`}>
             <ul className="space-y-3">
               {packets
                 .filter(
@@ -47,13 +47,16 @@ export default function PacketList() {
                       packet.category.includes("Adults"))
                 )
                 .map((packet) => (
-                  <li key={packet.id} className={dropdownItemStyle}>
+                  <li
+                    key={packet.id}
+                    className={`bg-white ${dropdownContentStyle}`}
+                  >
                     <h3 className="font-bold text-lg">{packet.title}</h3>
                     <p className="mb-2 text-gray-700">{packet.description}</p>
                     <a
                       href={packet.url}
                       download
-                      className={adultDownloadButtonStyle}
+                      className={`shadow ${adultDownloadButtonStyle}`}
                     >
                       Download
                     </a>
@@ -74,7 +77,7 @@ export default function PacketList() {
         </button>
 
         {showChildren && (
-          <div className={dropdownContentStyle}>
+          <div className={`bg-blue-300 ${dropdownContentStyle}`}>
             <ul className="space-y-3">
               {packets
                 .filter(
@@ -84,7 +87,10 @@ export default function PacketList() {
                       packet.category.includes("Children"))
                 )
                 .map((packet) => (
-                  <li key={packet.id} className={dropdownItemStyle}>
+                  <li
+                    key={packet.id}
+                    className={`bg-white ${dropdownItemStyle}`}
+                  >
                     <h3 className="font-bold text-lg">{packet.title}</h3>
                     <p className="mb-2 text-gray-700">{packet.description}</p>
                     <a

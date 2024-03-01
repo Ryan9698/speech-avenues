@@ -6,13 +6,53 @@
   font-family: "Rob Graves";
   src: url("/fonts/Robgraves-lKYV.ttf");
 }
-
+/* Header Cursive Font */
 .cursiveFont {
   font-family: "Dancing Script", cursive;
 }
-
+/* Chalk-like Font */
 .schoolFont {
   font-family: "Rob Graves", cursive;
+}
+/* Hamburger Mobile Icon */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #e8e8eb;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+.hamburger-middle {
+  transform: translateY(7px);
+}
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
 }
 /* Carousel */
 
@@ -27,6 +67,15 @@
 /* Logo Animation */
 .homeLogo {
   animation: fadeIn 5s;
+}
+#mobileMenuButton {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mobileMenuButton {
+    display: block;
+  }
 }
 @keyframes fadeIn {
   0% {
