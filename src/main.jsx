@@ -12,12 +12,14 @@ import ErrorPage from "./pages/Error";
 import Forms from "./pages/Forms";
 import Services from "./pages/Services";
 import Therapy from "./pages/Therapy";
+import Gallery from "./pages/Gallery";
 import SpeechTherapy from "./pages/Therapy/SpeechTherapy";
 import OccupationalTherapy from "./pages/Therapy/OccupationalTherapy";
 import PhysicalTherapy from "./pages/Therapy/PhysicalTherapy";
 import Therapists from "./pages/Therapists";
 import SLP from "./pages/Therapists/SLP";
 import OT from "./pages/Therapists/OT";
+import SchoolHome from "./pages/School/SchoolHome";
 
 register(); // register Swiper components
 
@@ -78,6 +80,14 @@ const router = createBrowserRouter([
             element: <OT />,
           },
         ],
+      },
+      {
+        path: "/gallery",
+        element: <Gallery />,
+      },
+      {
+        path: "/school",
+        element: <SchoolHome />,
       },
     ],
   },

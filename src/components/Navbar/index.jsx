@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
+import MobileMenu from "../MobileMenu";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Added state for mobile menu
+
+  // Mobile Menu State
+  const [isOpen, setIsOpen] = useState(false);
   const closeTimeoutId = useRef(null);
 
   const handleMouseEnter = () => {
@@ -29,9 +32,8 @@ const Navbar = () => {
 
   // Mobile Menu Functions
 
-  const toggleMobileMenu = () => {
-    // Function to toggle the mobile menu
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   // Close dropdown menu once a link is clicked:
@@ -52,18 +54,10 @@ const Navbar = () => {
 
   return (
     <nav>
-      {/* Mobile Navigation */}
-      <div className="md:hidden">
-        <button onClick={toggleMobileMenu}>
-          {/* Icon for mobile menu toggle */}
-        </button>
+      <div className="md:hidden z-50 fixed top-6  right-8">
+        {/* Other navbar content */}
+        <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden">{/* Mobile menu content */}</div>
-      )}
-
       {/* Desktop Navigation */}
       <div className={`${navBarStyle} fixed w-full z-30 top-0 left-0`}>
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -76,35 +70,24 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <NavLink
-            to="/school"
-            className={({ isActive }) =>
-              `${
-                isActive ? linkStyle : inactiveStyle
-              } schoolFont text-xl inline-flex items-center`
-            }
-          >
-            School
-            <img src="/images/pencil1.png" alt="Logo" className="h-10 w-10" />
-          </NavLink>
           {/* Other Navigation Links */}
           <div className="hidden md:flex items-center space-x-1">
-            <NavLink
+            {/* <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive ? linkStyle : inactiveStyle
               }
             >
               Home
-            </NavLink>
-            <NavLink
+            </NavLink> */}
+            {/* <NavLink
               to="/about"
               className={({ isActive }) =>
                 isActive ? linkStyle : inactiveStyle
               }
             >
               About
-            </NavLink>
+            </NavLink> */}
             <div className="relative">
               <button
                 onMouseEnter={handleMouseEnter}
@@ -195,8 +178,31 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
+            <NavLink
+              to="/gallery"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              Gallery
+            </NavLink>
+            <NavLink
+              to="/school"
+              className={({ isActive }) =>
+                `${
+                  isActive ? linkStyle : inactiveStyle
+                } schoolFont text-xl inline-flex items-center`
+              }
+            >
+              School
+              <img src="/images/pencil1.png" alt="Logo" className="h-10 w-10" />
+            </NavLink>
           </div>
         </div>
+      </div>
+      <div className="md:hidden z-50 fixed top-6  right-8">
+        {/* Other navbar content */}
+        <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
       </div>
       {/* </div> */}
       <div className="h-24 md:h-24"></div>
