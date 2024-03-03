@@ -1,18 +1,18 @@
 const slides = [
   {
-    url: "/otpictures/ot1.jpg",
+    url: "/images/otpictures/ot1.jpg",
   },
   {
-    url: "/otpictures/ot2.jpg",
+    url: "/images/otpictures/ot2.jpg",
   },
   {
-    url: "/otpictures/ot3.jpg",
+    url: "/images/otpictures/ot3.jpg",
   },
   {
-    url: "/otpictures/ot4.jpg",
+    url: "/images/otpictures/ot4.jpg",
   },
   {
-    url: "/otpictures/ot5.jpg",
+    url: "/images/otpictures/ot5.jpg",
   },
 ];
 

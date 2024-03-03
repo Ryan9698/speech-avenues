@@ -37,7 +37,7 @@ export default function PacketList() {
         </button>
 
         {showAdults && (
-          <div className={`bg-purple-300 ${dropdownContentStyle}`}>
+          <div className={`bg-purple-400 ${dropdownContentStyle}`}>
             <ul className="space-y-3">
               {packets
                 .filter(
@@ -77,7 +77,7 @@ export default function PacketList() {
         </button>
 
         {showChildren && (
-          <div className={`bg-blue-300 ${dropdownContentStyle}`}>
+          <div className={`bg-blue-400 ${dropdownContentStyle}`}>
             <ul className="space-y-3">
               {packets
                 .filter(

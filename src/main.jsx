@@ -17,6 +17,7 @@ import SpeechTherapy from "./pages/Therapy/SpeechTherapy";
 import OccupationalTherapy from "./pages/Therapy/OccupationalTherapy";
 import PhysicalTherapy from "./pages/Therapy/PhysicalTherapy";
 import Therapists from "./pages/Therapists";
+import Staff from "./pages/Staff";
 import SLP from "./pages/Therapists/SLP";
 import OT from "./pages/Therapists/OT";
 import SchoolHome from "./pages/School/SchoolHome";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/staff",
+        element: <Staff />,
       },
       {
         path: "/therapy",
