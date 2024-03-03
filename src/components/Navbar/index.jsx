@@ -163,6 +163,14 @@ const Navbar = () => {
               )}
             </div>
             <NavLink
+              to="/staff"
+              className={({ isActive }) =>
+                isActive ? linkStyle : inactiveStyle
+              }
+            >
+              Our Staff
+            </NavLink>
+            <NavLink
               to="/forms"
               className={({ isActive }) =>
                 isActive ? linkStyle : inactiveStyle
