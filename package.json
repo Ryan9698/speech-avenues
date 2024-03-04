@@ -35,8 +35,10 @@
   },
   "homepage": "https://github.com/Ryan9698/speech-avenues#readme",
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@tailwindcss/typography": "^0.5.10",
     "eslint": "^8.56.0",
+    "framer-motion": "^11.0.8",
     "nodemon": "^3.0.3",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
