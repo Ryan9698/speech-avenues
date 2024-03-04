@@ -146,7 +146,7 @@ const Navbar = () => {
                     >
                       Occupational Therapy
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                       to="/therapy/physicaltherapy"
                       className={({ isActive }) =>
                         `block px-4 py-2 text-white hover:bg-gray-700 ${
@@ -157,7 +157,7 @@ const Navbar = () => {
                       onClick={closeDropdown}
                     >
                       Physical Therapy
-                    </NavLink>
+                    </NavLink> */}
                   </div>
                 </div>
               )}
